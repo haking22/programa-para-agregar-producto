@@ -34,3 +34,16 @@ tendremos otra clase que duncionara de interfas que tendra unos metodo
  }
 
  // evento del DOM
+document.getElementById('product-form')
+    .addEventListener('submit', function(e) {
+        // almacenado en una costante los evento
+        const name = document.getElementById('name').value;
+        const price = document.getElementById('price').value;
+        const year = document.getElementById('year').value;
+        console.log(name,price,year);
+        // mostrando los elemento y creando el objeto producto
+        console.log(new Product (name,price,year));
+        e.preventDefault();
+
+
+});
