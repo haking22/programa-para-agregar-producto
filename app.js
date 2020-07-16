@@ -38,10 +38,9 @@ tendremos otra clase que duncionara de interfas que tendra unos metodo
      }
      resetForm(){
          document.getElementById('product-form').reset();
-         
      }
 
-     deleteProduct(element){
+     deleteProduct(element) {
          //para eliminar un elemento
         if(element.name==='delete'){
             // buscamos el div completo y lo eliminamos
@@ -49,7 +48,17 @@ tendremos otra clase que duncionara de interfas que tendra unos metodo
         }
      }
 
-     showMessage(){
+     showMessage(message, cssClass) {
+        const div = document.createElement('div');
+        div.className = `alert alert-${cssClass} mt-4`;
+        div.appendChild(document.createTextNode(message));
+        //Mostrando en el DOM
+        const container = document.querySelector('.container');
+        const app = document.querySelector('#App');
+        container.insertBefore(div, app);
+        setTimeout(function(){
+            document.querySelector('alert').remove();
+        },3000);
 
      }
  }
@@ -66,15 +75,26 @@ document.getElementById('product-form')
         const product = new Product (name,price,year);
         //costando para agregar el producto
         const ui= new UI();
-        ui.addProduct(product);
+        if(name==='' || price==='' || year===''){
+            ui.showMessage('Complete los campo por favor','warning');
+        }else{
+            ui.addProduct(product);
+            ui.resetForm();
+            ui.showMessage('Produccto Agregado Satifactoriamente','success');
+        }
+        
         // llamando el metodo de reseteo del formulario
-        ui.resetForm();
-        //
+        
+        
+       
+
         e.preventDefault();
 });
 // evento del para eliminar
 document.getElementById('product-list').addEventListener('click', function(e){
     const ui = new UI();
     ui.deleteProduct(e.target);
+
+    ui.showMessage('Producto Eliminado satifactoriamente','danger');
 });
 
