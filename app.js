@@ -45,7 +45,9 @@ tendremos otra clase que duncionara de interfas que tendra unos metodo
         if(element.name==='delete'){
             // buscamos el div completo y lo eliminamos
             element.parentElement.parentElement.parentElement.remove();
+            return true;
         }
+        return false;
      }
 
      showMessage(message, cssClass) {
@@ -57,7 +59,7 @@ tendremos otra clase que duncionara de interfas que tendra unos metodo
         const app = document.querySelector('#App');
         container.insertBefore(div, app);
         setTimeout(function(){
-            document.querySelector('alert').remove();
+            div.remove();
         },3000);
 
      }
@@ -93,8 +95,8 @@ document.getElementById('product-form')
 // evento del para eliminar
 document.getElementById('product-list').addEventListener('click', function(e){
     const ui = new UI();
-    ui.deleteProduct(e.target);
-
-    ui.showMessage('Producto Eliminado satifactoriamente','danger');
+    if(ui.deleteProduct(e.target)){
+        ui.showMessage('Producto Eliminado satifactoriamente','danger');
+    }
 });
 
