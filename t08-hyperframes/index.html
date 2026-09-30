@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, height=1080">
+    <title>Apartamento T08 - Presentación</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #0a0a0a;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      #root {
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+      .background {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+      }
+      .background img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform-origin: center;
+      }
+      .overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.7);
+        pointer-events: none;
+      }
+      .scene-title {
+        position: absolute;
+        bottom: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        color: white;
+        z-index: 10;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 30px 60px;
+        border-radius: 10px;
+        backdrop-filter: blur(4px);
+      }
+      .main-title {
+        font-size: 64px;
+        font-weight: bold;
+        letter-spacing: -0.02em;
+        margin-bottom: 15px;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+      }
+      .subtitle {
+        font-size: 32px;
+        font-weight: 300;
+        letter-spacing: 0.02em;
+        opacity: 0.95;
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+      }
+      .clip {
+        animation: fadeInOut 5s ease-in-out forwards;
+      }
+      @keyframes fadeInOut {
+        0% { opacity: 0; transform: translateY(20px); }
+        15% { opacity: 1; transform: translateY(0); }
+        85% { opacity: 1; transform: translateY(0); }
+        100% { opacity: 0; transform: translateY(-20px); }
+      }
+      @keyframes zoomIn {
+        from { transform: scale(1); }
+        to { transform: scale(2.2); }
+      }
+    </style>
+  </head>
+  <body>
+    <div data-hf-id="hf-rigq" id="root" data-composition-id="main" data-start="0" data-duration="40" data-width="1920" data-height="1080">
+      <!-- Background with zoom animation -->
+      <div data-hf-id="hf-fe8y" id="bg-zoom" class="background clip" data-start="0" data-duration="40" data-track-index="0" style="animation: zoomIn 40s linear forwards;">
+        <img data-hf-id="hf-e8n2" src="media/plano_T08.jpeg" alt="Plano Apartamento T08">
+      </div>
+
+      <!-- Overlay for darkening -->
+      <div data-hf-id="hf-v4p4" id="overlay-dark" class="overlay clip" data-start="0" data-duration="40" data-track-index="1"></div>
+
+      <!-- Scene 1: Bienvenido (0-5s) -->
+      <div data-hf-id="hf-dqce" id="scene-1-welcome" class="scene-title clip" data-start="0" data-duration="5" data-track-index="2" style="animation: fadeInOut 5s ease-in-out forwards;">
+        <div data-hf-id="hf-nsm5" class="main-title">¡Bienvenido!</div>
+        <div data-hf-id="hf-ign2" class="subtitle">Apartamento T08</div>
+      </div>
+
+      <!-- Scene 2: Sala Principal (5-11s) -->
+      <div data-hf-id="hf-6z6c" id="scene-2-sala" class="scene-title clip" data-start="5" data-duration="6" data-track-index="3" style="animation: fadeInOut 6s ease-in-out forwards;">
+        <div data-hf-id="hf-oicj" class="main-title">Sala Principal</div>
+        <div data-hf-id="hf-53tv" class="subtitle">Espaciosa y luminosa</div>
+      </div>
+
+      <!-- Scene 3: Comedor (11-16s) -->
+      <div data-hf-id="hf-zspn" id="scene-3-comedor" class="scene-title clip" data-start="11" data-duration="5" data-track-index="4" style="animation: fadeInOut 5s ease-in-out forwards;">
+        <div data-hf-id="hf-qol3" class="main-title">Comedor</div>
+        <div data-hf-id="hf-n7hj" class="subtitle">Integrado con la sala</div>
+      </div>
+
+      <!-- Scene 4: Cocina con Barra (16-22s) -->
+      <div data-hf-id="hf-od86" id="scene-4-cocina" class="scene-title clip" data-start="16" data-duration="6" data-track-index="5" style="animation: fadeInOut 6s ease-in-out forwards;">
+        <div data-hf-id="hf-vi57" class="main-title">Cocina Moderna</div>
+        <div data-hf-id="hf-p2zv" class="subtitle">Con barra integrada</div>
+      </div>
+
+      <!-- Scene 5: Recámaras Privadas (22-28s) -->
+      <div data-hf-id="hf-7ttx" id="scene-5-recamaras" class="scene-title clip" data-start="22" data-duration="6" data-track-index="6" style="animation: fadeInOut 6s ease-in-out forwards;">
+        <div data-hf-id="hf-xntb" class="main-title">Recámaras Privadas</div>
+        <div data-hf-id="hf-1pb4" class="subtitle">2 habitaciones confortables</div>
+      </div>
+
+      <!-- Scene 6: Baños Completos (28-32s) -->
+      <div data-hf-id="hf-5vm7" id="scene-6-banos" class="scene-title clip" data-start="28" data-duration="4" data-track-index="7" style="animation: fadeInOut 4s ease-in-out forwards;">
+        <div data-hf-id="hf-r44a" class="main-title">Baños Completos</div>
+        <div data-hf-id="hf-5hy9" class="subtitle">2 baños ensuite</div>
+      </div>
+
+      <!-- Scene 7: Terraza Privada (32-37s) -->
+      <div data-hf-id="hf-0lc8" id="scene-7-terraza" class="scene-title clip" data-start="32" data-duration="5" data-track-index="8" style="animation: fadeInOut 5s ease-in-out forwards;">
+        <div data-hf-id="hf-8vaq" class="main-title">Terraza Privada</div>
+        <div data-hf-id="hf-9kyw" class="subtitle">Con vistas privilegiadas</div>
+      </div>
+
+      <!-- Scene 8: Tu Nuevo Hogar (37-40s) -->
+      <div data-hf-id="hf-zyck" id="scene-8-cierre" class="scene-title clip" data-start="37" data-duration="3" data-track-index="9" style="animation: fadeInOut 3s ease-in-out forwards;">
+        <div data-hf-id="hf-g36z" class="main-title">Tu Nuevo Hogar</div>
+        <div data-hf-id="hf-owgb" class="subtitle">Te espera</div>
+      </div>
+    </div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      // Register paused timeline for HyperFrames rendering
+      window.__timelines["main"] = {
+        seek: function() {},
+        progress: function() { return 0; }
+      };
+    </script>
+  </body>
+</html>
